@@ -7,7 +7,18 @@ const generateTestFile = () => {
     buffer[i] = 1;
   }
 
-  fs.writeFileSync('test.dat', buffer);
+  fs.writeFileSync('test.bin', buffer);
+}
+
+const compress = () => {
+  return new Promise((resolve) => {
+
+    fs.readFile('test.bin', (err, data) => {
+      for (let i = 0; i < data.length; i++) {
+
+      }
+    });
+  });
 }
 
 generateTestFile();
