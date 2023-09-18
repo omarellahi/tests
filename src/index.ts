@@ -41,6 +41,10 @@ compress('');
 const decompress = (fileName: string) => {
   return new Promise<void>((resolve, reject) => {
     fs.readFile(fileName, (err, data) => {
+      if (err) {
+        reject(err);
+      }
+      
       const result: number[] = [];
 
       for (let i = 0; i < data.length / 2; i++) {
